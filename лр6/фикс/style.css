@@ -1,0 +1,354 @@
+/* ========== МАКСИМАЛЬНО ФИКСИРОВАННАЯ ВЕРСТКА — ВСЕ ШИРИНЫ В ПИКСЕЛЯХ, БЕЗ БУРГЕРА ========== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@400;700&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --main-color: #e91e63;
+    --light-text: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--light-text);
+    line-height: 1.6;
+    padding: 20px;
+    /* Горизонтальная прокрутка для экранов меньше 1360px */
+    overflow-x: auto;
+    min-width: 1360px;
+}
+
+/* Глобальный контейнер — строго 1360px */
+.fixed-body-wrapper {
+    display: flex;
+    justify-content: center;
+    min-width: 1360px;
+}
+
+.fixed-global-container {
+    width: 1360px;
+    margin: 0 auto;
+    background: rgba(10, 8, 25, 0.45);
+    border-radius: 48px;
+    backdrop-filter: blur(2px);
+    padding: 20px 25px 30px 25px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+}
+
+/* ========== HEADER FIXED ========== */
+.fixed-header {
+    width: 1310px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 40px;
+    padding: 25px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    margin-bottom: 25px;
+}
+
+.fixed-header-title {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #e91e63;
+    white-space: nowrap;
+}
+
+/* ========== NAVIGATION FIXED — БЕЗ БУРГЕРА ========== */
+.fixed-nav {
+    width: 1310px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 50px;
+    padding: 15px 25px;
+    backdrop-filter: blur(4px);
+    margin-bottom: 28px;
+}
+
+.nav-links-fixed {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+.nav-links-fixed li a {
+    color: #ffbbdd;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 40px;
+    transition: 0.3s;
+    display: block;
+    font-weight: 500;
+    background: rgba(0,0,0,0.3);
+    white-space: nowrap;
+}
+
+.nav-links-fixed li a:hover {
+    background: var(--main-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== ROW MAIN + SIDEBAR ========== */
+.fixed-content-row {
+    display: flex;
+    gap: 28px;
+    width: 1310px;
+    margin-bottom: 28px;
+}
+
+/* MAIN — фикс ширина 970px */
+.fixed-main {
+    width: 970px;
+}
+
+/* SIDEBAR — строго 312px (1310 - 970 - 28 = 312) */
+.fixed-sidebar {
+    width: 312px;
+}
+
+/* ========== БИОГРАФИЯ ========== */
+.bio-photo-fixed {
+    text-align: center;
+    margin: 20px 0;
+}
+.bio-photo-fixed img {
+    width: 400px;
+    height: auto;
+    border-radius: 35px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    border-left: 6px solid var(--main-color);
+    padding-left: 18px;
+    margin: 25px 0 18px 0;
+}
+h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--main-color);
+    margin: 12px 0 8px;
+}
+
+/* ========== ДИСКОГРАФИЯ 2 колонки пиксели ========== */
+.discography-fixed-2cols {
+    display: flex;
+    gap: 40px;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 35px;
+}
+.disc-col-fixed {
+    width: 445px;
+}
+.custom-list-fixed {
+    list-style: none;
+}
+.custom-list-fixed li::before {
+    content: "★";
+    color: var(--main-color);
+    margin-right: 10px;
+}
+.fixed-ol {
+    padding-left: 1.5rem;
+}
+
+/* ========== ГАЛЕРЕЯ 3 колонки фикс ========== */
+.gallery-fixed-3cols {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+.gallery-item-fixed {
+    width: 306px;
+    text-align: center;
+    background: rgba(0,0,0,0.45);
+    padding: 18px 12px;
+    border-radius: 28px;
+}
+.gallery-img-fixed {
+    width: 280px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 2px solid var(--main-color);
+}
+.circle-img-fixed {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ========== ВИДЕО 2 КОЛОНКИ ========== */
+.video-fixed-2cols {
+    display: flex;
+    gap: 25px;
+    margin: 20px 0;
+}
+.video-wrapper-fixed {
+    width: 472px;
+    text-align: center;
+    background: rgba(0,0,0,0.45);
+    padding: 18px;
+    border-radius: 32px;
+}
+video {
+    width: 436px;
+    border-radius: 24px;
+}
+
+/* ========== АУДИО БЛОКИ ========== */
+.audio-block-fixed {
+    background: linear-gradient(115deg, #667eea 0%, #764ba2 100%);
+    padding: 18px;
+    border-radius: 38px;
+    margin: 18px 0;
+    text-align: center;
+    width: 100%;
+}
+audio {
+    width: 400px;
+    border-radius: 40px;
+}
+
+/* ========== ТАБЛИЦА ========== */
+.table-fixed-wrapper {
+    width: 970px;
+    overflow-x: auto;
+}
+.styled-table-fixed {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.65);
+    border-radius: 20px;
+}
+.styled-table-fixed th, .styled-table-fixed td {
+    border: 1px solid var(--main-color);
+    padding: 12px 8px;
+    text-align: center;
+}
+.styled-table-fixed th {
+    background: var(--main-color);
+}
+
+/* ========== ФОРМА ========== */
+.fan-form-fixed {
+    background: rgba(0,0,0,0.6);
+    padding: 25px;
+    border-radius: 35px;
+    width: 970px;
+}
+.fieldset-fixed {
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    padding: 18px 20px;
+    margin: 20px 0;
+}
+legend {
+    color: var(--main-color);
+    padding: 0 14px;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid #ccc;
+    color: white;
+}
+.radio-group-fixed, .checkbox-group-fixed {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+.form-buttons-fixed {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 6px 8px;
+}
+button:hover {
+    background: #ff4081;
+}
+
+/* ========== САЙДБАР КАРТОЧКИ ========== */
+.sidebar-card-fixed {
+    background: rgba(0,0,0,0.55);
+    border-radius: 35px;
+    padding: 22px;
+    margin-bottom: 28px;
+    width: 312px;
+}
+.sidebar-card-fixed h3 {
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+}
+
+/* ========== FOOTER ========== */
+.fixed-footer {
+    width: 1310px;
+    text-align: center;
+    padding: 22px 15px;
+    border-top: 1px solid rgba(233,30,99,0.5);
+    background: rgba(0,0,0,0.4);
+    border-radius: 40px;
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЕ КЛАССЫ ========== */
+.special-text { color: #ffcc80; }
+.underline { text-decoration: underline; }
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.fixed-hr { margin: 18px 0; border-color: var(--main-color); }
+
+/* АНИМАЦИЯ */
+@keyframes fadeInFixed {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+section { animation: fadeInFixed 0.5s ease-out; }
+
+/* ========== АДАПТИВНОСТЬ: при ширине меньше 1360px включается горизонтальный скролл, верстка не ломается ========== */
+@media (max-width: 1360px) {
+    body {
+        min-width: 1360px;
+        overflow-x: scroll;
+        padding: 20px 10px;
+    }
+    .fixed-body-wrapper {
+        min-width: 1360px;
+        justify-content: flex-start;
+    }
+}
+
+/* Для очень маленьких экранов — просто сохраняем прокрутку, меню остается горизонтальным с прокруткой внутри */
+@media (max-width: 900px) {
+    .fixed-nav {
+        overflow-x: auto;
+    }
+    .nav-links-fixed {
+        min-width: 700px;
+    }
+}

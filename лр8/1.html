@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Регистрация · Дисконтная карта</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f5f3f7 0%, #e9e5ef 100%);
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ГЛАВНЫЙ КОНТЕЙНЕР — КРАСНЫЙ ФОН, БЕЛЫЙ ТЕКСТ, ИДЕАЛЬНО ПО ЦЕНТРУ */
+    .registration-card {
+      max-width: 500px;
+      width: 100%;
+      background: #c62828;
+      border-radius: 2rem;
+      box-shadow: 0 25px 45px rgba(198, 40, 40, 0.35), 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem 2rem 2.8rem;
+      transition: all 0.2s ease;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+      .registration-card {
+        padding: 2.8rem 2.8rem 3rem;
+      }
+    }
+
+    /* ШАПКА: ВСЕ ЭЛЕМЕНТЫ СТРОГО ПО ЦЕНТРУ ГОРИЗОНТАЛЬНО */
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* МИКРОСЕТКА ДЛЯ ПОЛЕЙ: КАЖДОЕ ПОЛЕ РАСТЯГИВАЕТСЯ НА ВСЮ ШИРИНУ */
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ГРУППА (ЛЕЙБЛ + ИНПУТ) */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    /* ЛЕЙБЛЫ: ВЫРОВНЕНЫ ПО ЛЕВОМУ КРАЮ ДЛЯ УДОБСТВА, НО ВИЗУАЛЬНО ВСЯ ФОРМА ЦЕНТРИРОВАНА */
+    .field-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    /* ОРАНЖЕВАЯ ЗВЕЗДОЧКА */
+    .required-star {
+      color: #FFB74D;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-left: 2px;
+    }
+
+    /* СТИЛИ ДЛЯ ВСЕХ ПОЛЕЙ ВВОДА — ТЕКСТ, EMAIL, TEL, ДАТА (ТЕПЕРЬ TEXT) */
+    .field-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #1a1724;
+      background: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      border-radius: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    /* ПЛЕЙСХОЛДЕРЫ — ЧТОБЫ БЫЛО ВИДНО ПРИМЕРЫ (Александр, Иванов и т.д.) */
+    .field-group input::placeholder {
+      color: #9c88b3;
+      font-weight: 400;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .field-group input:hover {
+      border-color: rgba(255, 255, 255, 0.8);
+      background-color: #fffbfb;
+    }
+
+    .field-group input:focus {
+      border-color: #ffffff;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+
+    /* КНОПКА — КРАСНАЯ, БЕЛЫЙ ТЕКСТ, ПО ЦЕНТРУ */
+    .register-btn {
+      background: #b71c1c;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 44px;
+      cursor: pointer;
+      width: 100%;
+      font-family: inherit;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      margin-top: 0.4rem;
+    }
+
+    .register-btn:hover {
+      background: #d32f2f;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .register-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* МЕЛКАЯ АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ */
+    @media (max-width: 550px) {
+      .registration-card {
+        padding: 1.8rem 1.4rem 2rem;
+      }
+      .form-title {
+        font-size: 1.7rem;
+      }
+      .field-group input {
+        padding: 0.75rem 0.9rem;
+      }
+    }
+
+    /* УБИРАЕМ ЛЮБЫЕ ЛИШНИЕ ЭЛЕМЕНТЫ */
+    hr {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-card">
+    
+    <!-- Заголовки по центру -->
+    <div class="form-header">
+      <h1 class="form-title">Регистрация</h1>
+      <p class="form-subtitle">Заполните анкету и получите дисконтную карту!</p>
+    </div>
+
+    <form id="discountForm" action="#" method="post" novalidate>
+      <div class="form-fields">
+        
+        <!-- 1. Имя -->
+        <div class="field-group">
+          <label>
+            Ваше имя <span class="required-star">*</span>
+          </label>
+          <input 
+            type="text" 
+            name="firstName" 
+            autocomplete="given-name"
+          >
+        </div>
+
+        <!-- 2. Фамилия -->
+        <div class="field-group">
+          <label>
+            Ваша фамилия <span class="required-star">*</span>
+          </label>
+          <input 
+            type="text" 
+            name="lastName" 
+            autocomplete="family-name"
+          >
+        </div>
+
+        <!-- 3. Дата рождения (без календаря, обычный текст) -->
+        <div class="field-group">
+          <label>
+            Ваша дата рождения <span class="required-star">*</span>
+          </label>
+          <input 
+            type="text" 
+            name="birthDate" 
+            autocomplete="bday"
+          >
+        </div>
+
+        <!-- 4. Email -->
+        <div class="field-group">
+          <label>
+            Ваш e-mail <span class="required-star">*</span>
+          </label>
+          <input 
+            type="email" 
+            name="email" 
+            autocomplete="email"
+          >
+        </div>
+
+        <!-- 5. Телефон -->
+        <div class="field-group">
+          <label>
+            Ваш номер телефона <span class="required-star">*</span>
+          </label>
+          <input 
+            type="tel" 
+            name="phone" 
+            autocomplete="tel"
+          >
+        </div>
+
+        <!-- 6. Город -->
+        <div class="field-group">
+          <label>
+            Город <span class="required-star">*</span>
+          </label>
+          <input 
+            type="text" 
+            name="city" 
+            autocomplete="address-level2"
+          >
+        </div>
+
+        <!-- Кнопка регистрации -->
+        <button type="submit" class="register-btn">Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const formElement = document.getElementById('discountForm');
+    
+    if (formElement) {
+      formElement.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        const allInputs = formElement.querySelectorAll('input');
+        allInputs.forEach(input => {
+          input.value = '';
+          input.style.borderColor = '';
+          input.style.backgroundColor = '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

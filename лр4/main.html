@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lady Gaga · Фан-сайт</title>
+    
+    <!--внешний файл CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!--импортирование CSS -->
+    <!-- внутренняя таблица стилей -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@400;700&family=Oswald:wght@400;600&display=swap');
+    
+        :root {
+            --main-color: #e91e63;
+            --dark-bg: #1a1a2e;
+            --light-text: #f0f0f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--light-text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        /* селектор тега */
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            border-left: 5px solid var(--main-color);
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        /* селектор класса */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* селектор идентификатора */
+        #bio {
+            background: rgba(0,0,0,0.5);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        /* дочерний селектор */
+        .gallery > figure {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        /* соседний селектор */
+        h3 + ul {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* селектор атрибута */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        /* псевдокласс */
+        a:hover {
+            color: var(--main-color);
+            text-decoration: underline;
+        }
+        
+        /* псевдоэлемент */
+        .custom-list li::before {
+            content: "★";
+            color: var(--main-color);
+            margin-right: 8px;
+        }
+        
+        /* универсальный селектор уже использован выше (*) */
+        
+        /* каскадность и приоритет: пример переопределения */
+        .special-text {
+            color: yellow;
+        }
+        p {
+            color: var(--light-text);
+        }
+        p.special-text {
+            color: orange;
+        }
+        
+        /* анимация */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* трансформация */
+        .gallery-img {
+            transition: transform 0.3s;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        /* оформление изображений - увеличенные размеры и центрирование */
+        .rounded-img {
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: 2px solid var(--main-color);
+        }
+        
+        .circle-img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        /* центрирование фото в биографии */
+        .bio-photo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .bio-photo img {
+            width: 350px;
+            max-width: 90%;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border: 3px solid var(--main-color);
+            transition: transform 0.3s;
+        }
+        
+        .bio-photo img:hover {
+            transform: scale(1.02);
+        }
+        
+        /* центрирование галереи */
+        .gallery {
+            text-align: center;
+        }
+        
+        .gallery-img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 2px solid var(--main-color);
+        }
+        
+        /* стилизация таблиц */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0,0,0,0.6);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .styled-table th,
+        .styled-table td {
+            border: 1px solid var(--main-color);
+            padding: 10px;
+            text-align: center;
+        }
+        .styled-table th {
+            background: var(--main-color);
+            color: white;
+        }
+        .styled-table tr:nth-child(even) {
+            background: rgba(233,30,99,0.2);
+        }
+        
+        /* стилизация кнопок и полей форм */
+        button {
+            background: var(--main-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #ff4081;
+            transform: scale(1.02);
+        }
+        
+        input, select, textarea {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        /* стилизация списков с графическим маркером */
+        .custom-list {
+            list-style: none;
+        }
+        
+        /* текст: курсив, жирный, подчеркнутый */
+        .italic {
+            font-style: italic;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .line-through {
+            text-decoration: line-through;
+        }
+      
+        .header-title {
+            font-size: 3rem;
+            margin-bottom: 1em;
+        }
+        .responsive-box {
+            width: calc(100% - 40px);
+            padding: 2%;
+        }
+        
+        /* градиент для фона блока */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        /* центрирование видео */
+        .video-wrapper {
+            text-align: center;
+        }
+        
+        .video-wrapper video {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* центрирование аудио */
+        .audio-center {
+            text-align: center;
+        }
+        
+        .audio-center audio {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- внутритеговое включение -->
+    <header style="text-align: center; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 30px; margin-bottom: 30px;">
+        <h1 style="font-family: 'Lora', serif; font-size: 3.5rem; letter-spacing: 2px;">LADY GAGA</h1>
+        <p style="font-style: italic;">Неофициальный фан-сайт Леди Гаги: биография, дискография, фото, видео, музыка и форма для фанатов.</p>
+        <p>Официальный фан-сайт 2026</p>
+    </header>
+
+    <nav>
+        <h2>Навигация</h2>
+        <ul style="display: flex; gap: 20px; list-style: none; flex-wrap: wrap; justify-content: center;">
+            <li><a href="#bio">Биография</a></li>
+            <li><a href="#discography">Дискография</a></li>
+            <li><a href="#photo">Фото</a></li>
+            <li><a href="#video">Видео</a></li>
+            <li><a href="#audio">Музыка</a></li>
+            <li><a href="#fan-form">Форма</a></li>
+        </ul>
+        <hr style="margin: 20px 0;">
+    </nav>
+
+    <main>
+        <section id="bio">
+            <h2>Кто такая Леди Гага?</h2>
+            <div class="bio-photo">
+                <img src="image/1.png" alt="Леди Гага на сцене">
+            </div>
+            <div>
+                <p><span class="bold">Стефани Джоанн Анджелина Джерманотта</span> (родилась 28 марта 1986), известная всему миру как <span class="italic">Lady Gaga</span> — американская певица, автор песен, актриса и филантроп.</p>
+                <p class="special-text">Она стала известна благодаря своим экстравагантным образам и уникальному голосу.</p>
+                <p><span class="underline">Дебютный альбом The Fame (2008)</span> стал мировым хитом с синглами "Just Dance" и "Poker Face".</p>
+                <p>Гага начала свою карьеру, выступая в клубах Нью-Йорка. Позже она подписала контракт с лейблом Interscope Records.</p>
+                <p>Она также известна своей актерской работой: роль в фильме "Звезда родилась", за которую получила "Оскар" за лучшую песню "Shallow".</p>
+            </div>
+        </section>
+
+        <section id="discography">
+            <h2>Дискография</h2>
+            <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                <div>
+                    <h3>Студийные альбомы:</h3>
+                    <ul class="custom-list">
+                        <li>The Fame (2008)</li>
+                        <li>The Fame Monster (2009)</li>
+                        <li>Born This Way (2011)</li>
+                        <li>ARTPOP (2013)</li>
+                        <li>Cheek to Cheek (2014)</li>
+                        <li>Joanne (2016)</li>
+                        <li>A Star Is Born (2018)</li>
+                        <li>Chromatica (2020)</li>
+                        <li>Love for Sale (2021)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Топ-5 песен:</h3>
+                    <ol>
+                        <li>Bad Romance</li>
+                        <li>Shallow</li>
+                        <li>Poker Face</li>
+                        <li>Born This Way</li>
+                        <li>Always Remember Us This Way</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="photo">
+            <h2>Фотогалерея</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="image/2.jpg" alt="Chromatica" class="gallery-img">
+                    <figcaption>Эра Chromatica</figcaption>
+                </figure>
+                <figure>
+                    <img src="image/3.jpg" alt="Оскар" class="gallery-img circle-img">
+                    <figcaption>Оскар 2019</figcaption>
+                </figure>
+                <figure>
+                    <img src="image/4.png" alt="С Тони Беннеттом" class="gallery-img">
+                    <figcaption>Love for Sale</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Видео</h2>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                <div class="video-wrapper">
+                    <h3>Bad Romance</h3>
+                    <video controls width="450" poster="image/5.jpg">
+                        <source src="media/lady-gaga-bad-romance_438934.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                    <h3>Judas</h3>
+                    <video controls width="450" poster="image/6.jpg">
+                        <source src="media/lady-gaga-judas_652314.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="audio">
+            <h2>Музыка</h2>
+            <div class="gradient-bg audio-center" style="margin: 10px 0;">
+                <p><strong>Shallow</strong> (из фильма "Звезда родилась")</p>
+                <audio controls>
+                    <source src="audio/Lady_Gaga_Bradley_Cooper_-_Shallow_64798036.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="gradient-bg audio-center">
+                <p><strong>Always Remember Us This Way</strong></p>
+                <audio controls>
+                    <source src="audio/Lady_Gaga_-_Always_Remember_Us_This_Way_79404418.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </section>
+
+        <section id="table">
+            <h2>Турне и концерты</h2>
+            <table class="styled-table">
+                <caption>История мировых туров</caption>
+                <thead>
+                    <tr><th>Год</th><th>Название тура</th><th>Альбом</th><th>Концертов</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2009-2010</td><td>The Fame Ball Tour</td><td>The Fame</td><td>83</td></tr>
+                    <tr><td>2010-2011</td><td>The Monster Ball Tour</td><td>The Fame Monster</td><td>200+</td></tr>
+                    <tr><td>2012-2013</td><td>Born This Way Ball</td><td>Born This Way</td><td>98</td></tr>
+                    <tr><td>2022</td><td>The Chromatica Ball</td><td>Chromatica</td><td>20</td></tr>
+                    <tr><td>2025</td><td>The Mayhem Ball</td><td>Mayhem</td><td>60</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="fan-form">
+            <h2>Форма для фанатов</h2>
+            <form action="#" method="post" style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 20px;">
+                <fieldset>
+                    <legend>Ваши данные</legend>
+                    <label>Имя (ник):</label>
+                    <input type="text" name="fan-name" placeholder="Little Monster">
+                    
+                    <label>Email:</label>
+                    <input type="email" name="fan-email" placeholder="monster@ladygaga.com">
+                    
+                    <label>Возраст:</label>
+                    <input type="number" name="fan-age" placeholder="18">
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Любимый альбом</legend>
+                    <select name="favorite-album">
+                        <option>The Fame</option><option>The Fame Monster</option>
+                        <option>Born This Way</option><option>ARTPOP</option>
+                        <option>Joanne</option><option>Chromatica</option>
+                    </select>
+                    
+                    <p>Вы уже были на концерте?</p>
+                    <input type="radio" name="concert" value="yes"> Да
+                    <input type="radio" name="concert" value="no"> Нет, но хочу
+                    
+                    <p>Любимые эпохи:</p>
+                    <input type="checkbox" name="era" value="fame"> The Fame
+                    <input type="checkbox" name="era" value="born"> Born This Way
+                    <input type="checkbox" name="era" value="chromatica"> Chromatica
+                    
+                    <p>Почему вы любите Леди Гагу?</p>
+                    <textarea rows="3" cols="50" placeholder="Напишите пару слов..."></textarea>
+                </fieldset>
+                
+                <button type="submit">Отправить</button>
+                <button type="reset">Очистить</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #555;">
+        <p>© 2026 Фан-сайт Lady Gaga</p>
+    </footer>
+</div>
+
+</body>
+</html>

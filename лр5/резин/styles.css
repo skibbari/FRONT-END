@@ -1,0 +1,542 @@
+/* ---------- ГЛОБАЛЬНЫЕ СТИЛИ (РЕЗИНОВАЯ ВЕРСТКА, БЕЗ БУРГЕРА) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@400;700&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --main-color: #e91e63;
+    --dark-bg: #1a1a2e;
+    --light-text: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--light-text);
+    line-height: 1.6;
+    padding: 2%;
+}
+
+.main-container {
+    width: 96%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+}
+
+/* ========== ШАПКА (flex-контейнер) ========== */
+.header {
+    background: rgba(0,0,0,0.8);
+    padding: 3% 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.logo {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    font-weight: bold;
+    background: var(--main-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+}
+
+.nav {
+    display: flex;
+    gap: clamp(8px, 2vw, 15px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.nav a:hover {
+    background: var(--main-color);
+    transform: translateY(-2px);
+}
+
+/* ========== ОСНОВНАЯ СЕТКА ========== */
+.grid-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    padding: 4%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    justify-content: space-between;
+}
+
+.block {
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    padding: 5%;
+    transition: all 0.3s;
+    border: 1px solid rgba(233,30,99,0.3);
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    border-left: 5px solid var(--main-color);
+    padding-left: 15px;
+    margin: 0 0 5% 0;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    margin: 5% 0 3% 0;
+    color: #ff6b9d;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+/* Резиновые размеры блоков */
+.block1 { 
+    flex: 2 1 300px; 
+}
+
+.block4 { 
+    flex: 1 1 280px; 
+}
+
+.block5 { 
+    flex: 1 1 280px; 
+}
+
+.block2 { 
+    width: 100%; 
+}
+
+.block3, .block6 {
+    width: 100%;
+    flex: auto;
+}
+
+/* ========== КОНТЕНТ ========== */
+.bio-photo { 
+    text-align: center; 
+    margin-bottom: 5%; 
+}
+
+.bio-photo img { 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px; 
+    border: 3px solid var(--main-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ДИСКОГРАФИЯ */
+.discography-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    text-align: center;
+}
+
+.discography-container > div {
+    width: 100%;
+}
+
+.custom-list {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+.custom-list li {
+    margin: 8px 0;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.custom-list li::before {
+    content: "★";
+    color: var(--main-color);
+    margin-right: 8px;
+}
+
+.discography-container ol {
+    display: inline-block;
+    text-align: left;
+}
+
+.discography-container ol li {
+    margin: 8px 0;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* ФОТОГАЛЕРЕЯ - резиновая */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery figure {
+    text-align: center;
+    flex: 1 1 200px;
+    min-width: 150px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.circle-img {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff6b9d;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+/* ВИДЕО БЛОК - резиновый */
+.video-flex { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 5%; 
+    justify-content: center; 
+}
+
+.video-wrapper { 
+    text-align: center; 
+    flex: 1 1 300px;
+    background: rgba(0,0,0,0.3);
+    padding: 5%;
+    border-radius: 15px;
+}
+
+.video-wrapper video { 
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.video-wrapper h3 {
+    margin-top: 0;
+}
+
+/* МУЗЫКА - резиновая */
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 4%;
+    border-radius: 15px;
+    margin: 4% 0;
+    flex-wrap: wrap;
+}
+
+.music-img {
+    width: clamp(60px, 10vw, 80px);
+    height: clamp(60px, 10vw, 80px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.music-info {
+    flex: 1;
+    text-align: left;
+}
+
+.music-info strong {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.music-info audio {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+}
+
+/* Таблица - резиновая с горизонтальной прокруткой */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 5%;
+}
+
+.styled-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid var(--main-color);
+    padding: clamp(8px, 2%, 12px);
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+.styled-table th {
+    background: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+    background: rgba(233,30,99,0.2);
+}
+
+.styled-table tr:hover {
+    background: rgba(233,30,99,0.3);
+}
+
+caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ff6b9d;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* Форма фаната - резиновая */
+.fan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+
+.fan-form fieldset {
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+    padding: 5%;
+    margin-bottom: 3%;
+}
+
+.fan-form legend {
+    color: var(--main-color);
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+}
+
+.fan-form label {
+    margin-top: 10px;
+    display: block;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+.fan-form input[type="text"],
+.fan-form input[type="email"],
+.fan-form input[type="number"],
+.fan-form select,
+.fan-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.fan-form input::placeholder,
+.fan-form textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.fan-form p {
+    margin-top: 15px;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+.form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.fan-form button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: clamp(10px, 3%, 12px) clamp(20px, 5%, 30px);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: bold;
+    flex: 0 1 auto;
+}
+
+.fan-form button:hover {
+    background: #ff4081;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(233,30,99,0.4);
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: clamp(10px, 4%, 20px);
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 0;
+}
+
+/* ПОДВАЛ */
+.footer {
+    background: #1a1a2e;
+    padding: 4% 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid var(--main-color);
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.block p {
+    margin-bottom: 12px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 1023px) {
+    .row { 
+        flex-direction: column; 
+    }
+    .block1, .block4, .block5, .block3, .block6 { 
+        width: 100%; 
+        flex: auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1%;
+    }
+    
+    .main-container {
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .footer { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .footer-info { 
+        justify-content: center; 
+    }
+    
+    .music-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .music-info {
+        text-align: center;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .fan-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery figure {
+        min-width: 120px;
+    }
+    
+    .video-wrapper {
+        flex: 1 1 100%;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+        padding: 5px 15px;
+    }
+    
+    .nav a {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}

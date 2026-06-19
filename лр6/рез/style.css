@@ -1,0 +1,468 @@
+/* ========== РЕЗИНОВАЯ (АДАПТИВНАЯ) ВЕРСТКА — ПРОЦЕНТЫ, FR, FLEX, GRID ========== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@400;700&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --main-color: #e91e63;
+    --light-text: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--light-text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Глобальный контейнер — резиновый, с max-width */
+.fluid-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.fluid-container {
+    width: 100%;
+    background: rgba(10, 8, 25, 0.45);
+    border-radius: 48px;
+    backdrop-filter: blur(2px);
+    padding: 20px 25px 30px 25px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+}
+
+/* ========== HEADER ========== */
+.fluid-header {
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    border-radius: 40px;
+    padding: 25px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    margin-bottom: 25px;
+}
+
+.fluid-header-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #e91e63;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* ========== НАВИГАЦИЯ — резиновая, flex-wrap ========== */
+.fluid-nav {
+    width: 100%;
+    background: rgba(0,0,0,0.55);
+    border-radius: 50px;
+    padding: 15px 20px;
+    backdrop-filter: blur(4px);
+    margin-bottom: 28px;
+}
+
+.fluid-nav-links {
+    display: flex;
+    gap: clamp(8px, 2vw, 18px);
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.fluid-nav-links li a {
+    color: #ffbbdd;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: 0.3s;
+    display: block;
+    font-weight: 500;
+    background: rgba(0,0,0,0.3);
+    white-space: nowrap;
+}
+
+.fluid-nav-links li a:hover {
+    background: var(--main-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== MAIN + SIDEBAR — резиновый грид ========== */
+.fluid-content-row {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.fluid-main {
+    width: 100%;
+    min-width: 0;
+}
+
+.fluid-sidebar {
+    width: 100%;
+}
+
+/* ========== БИОГРАФИЯ ========== */
+.bio-photo-fluid {
+    text-align: center;
+    margin: 20px 0;
+}
+.bio-photo-fluid img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 35px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    border-left: 6px solid var(--main-color);
+    padding-left: 18px;
+    margin: 25px 0 18px 0;
+}
+h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--main-color);
+    margin: 12px 0 8px;
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+}
+
+/* ========== ДИСКОГРАФИЯ — резиновый грид ========== */
+.discography-fluid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 35px;
+}
+.disc-col-fluid {
+    width: 100%;
+}
+.custom-list-fluid {
+    list-style: none;
+}
+.custom-list-fluid li::before {
+    content: "★";
+    color: var(--main-color);
+    margin-right: 10px;
+}
+.fluid-ol {
+    padding-left: 1.5rem;
+}
+
+/* ========== ГАЛЕРЕЯ — резиновый грид ========== */
+.gallery-fluid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.gallery-item-fluid {
+    text-align: center;
+    background: rgba(0,0,0,0.45);
+    padding: 18px 12px;
+    border-radius: 28px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.gallery-item-fluid:hover {
+    transform: translateY(-5px);
+}
+.gallery-img-fluid {
+    width: 100%;
+    aspect-ratio: 280 / 220;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 2px solid var(--main-color);
+}
+.circle-img-fluid {
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+/* ========== ВИДЕО — резиновый грид ========== */
+.video-fluid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 20px 0;
+}
+.video-wrapper-fluid {
+    text-align: center;
+    background: rgba(0,0,0,0.45);
+    padding: 18px;
+    border-radius: 32px;
+}
+video {
+    width: 100%;
+    border-radius: 24px;
+}
+
+/* ========== АУДИО ========== */
+.audio-block-fluid {
+    background: linear-gradient(115deg, #667eea 0%, #764ba2 100%);
+    padding: 18px;
+    border-radius: 38px;
+    margin: 18px 0;
+    text-align: center;
+    width: 100%;
+}
+audio {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 40px;
+}
+
+/* ========== ТАБЛИЦА с горизонтальной прокруткой ========== */
+.table-fluid-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 20px;
+}
+.styled-table-fluid {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.65);
+    border-radius: 20px;
+}
+.styled-table-fluid th, .styled-table-fluid td {
+    border: 1px solid var(--main-color);
+    padding: 12px 8px;
+    text-align: center;
+}
+.styled-table-fluid th {
+    background: var(--main-color);
+}
+.styled-table-fluid caption {
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* ========== ФОРМА — резиновая ========== */
+.fan-form-fluid {
+    background: rgba(0,0,0,0.6);
+    padding: 25px;
+    border-radius: 35px;
+    width: 100%;
+}
+.fieldset-fluid {
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    padding: 18px 20px;
+    margin: 20px 0;
+}
+legend {
+    color: var(--main-color);
+    padding: 0 14px;
+    font-weight: bold;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid #ccc;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+.radio-group-fluid, .checkbox-group-fluid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+.radio-group-fluid label, .checkbox-group-fluid label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.form-buttons-fluid {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 6px 8px;
+    transition: 0.25s;
+}
+button:hover {
+    background: #ff4081;
+    transform: scale(1.02);
+}
+
+/* ========== САЙДБАР ========== */
+.sidebar-card-fluid {
+    background: rgba(0,0,0,0.55);
+    border-radius: 35px;
+    padding: 22px;
+    margin-bottom: 28px;
+    width: 100%;
+}
+.sidebar-card-fluid h3 {
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+}
+
+/* ========== FOOTER ========== */
+.fluid-footer {
+    width: 100%;
+    text-align: center;
+    padding: 22px 15px;
+    border-top: 1px solid rgba(233,30,99,0.5);
+    background: rgba(0,0,0,0.4);
+    border-radius: 40px;
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЕ КЛАССЫ ========== */
+.special-text { color: #ffcc80; }
+.underline { text-decoration: underline; }
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.fluid-hr { margin: 18px 0; border-color: var(--main-color); }
+
+/* АНИМАЦИЯ */
+@keyframes fadeInFluid {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+section { animation: fadeInFluid 0.5s ease-out; }
+
+/* ========== АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ ========== */
+@media (max-width: 900px) {
+    body {
+        padding: 15px;
+    }
+    .fluid-container {
+        padding: 15px 18px;
+    }
+    .fluid-content-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .fluid-nav-links {
+        gap: 10px;
+    }
+    .fluid-nav-links li a {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fluid-header-title {
+        white-space: normal;
+        word-break: break-word;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .discography-fluid-grid {
+        gap: 20px;
+        padding: 15px;
+    }
+    .gallery-fluid-grid {
+        gap: 18px;
+    }
+    .video-fluid-grid {
+        gap: 18px;
+    }
+    .sidebar-card-fluid {
+        padding: 18px;
+    }
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .radio-group-fluid, .checkbox-group-fluid {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .fieldset-fluid {
+        padding: 12px 15px;
+    }
+    .fan-form-fluid {
+        padding: 18px;
+    }
+    /* Адаптивная таблица для мобильных */
+    .styled-table-fluid thead {
+        display: none;
+    }
+    .styled-table-fluid, .styled-table-fluid tbody, .styled-table-fluid tr, .styled-table-fluid td {
+        display: block;
+        width: 100%;
+    }
+    .styled-table-fluid tr {
+        margin-bottom: 18px;
+        border: 1px solid var(--main-color);
+        border-radius: 20px;
+        padding: 12px;
+    }
+    .styled-table-fluid td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid rgba(233,30,99,0.3);
+    }
+    .styled-table-fluid td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--main-color);
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fluid-wrapper {
+        padding: 0;
+    }
+    .fluid-container {
+        padding: 12px;
+        border-radius: 30px;
+    }
+    .fluid-header {
+        padding: 18px 12px;
+    }
+    .fluid-nav {
+        border-radius: 35px;
+    }
+    .gallery-img-fluid {
+        aspect-ratio: 1 / 0.8;
+    }
+    audio {
+        max-width: 100%;
+    }
+}

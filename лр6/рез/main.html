@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Lady Gaga - Неофициальный фан-сайт | Резиновая верстка</title>
+    
+    <!-- подключение отдельного CSS файла -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="fluid-wrapper">
+    <div class="fluid-container">
+        <!-- HEADER -->
+        <header class="fluid-header">
+            <h1 class="fluid-header-title">LADY GAGA</h1>
+            <p class="italic">Неофициальный фан-сайт</p>
+            <p> Официальный фан-ресурс 2026</p>
+        </header>
+
+        <!-- NAVIGATION - резиновая, без бургера, адаптивная -->
+        <nav class="fluid-nav">
+            <ul class="fluid-nav-links">
+                <li><a href="#bio">Биография</a></li>
+                <li><a href="#discography">Дискография</a></li>
+                <li><a href="#photo">Фото</a></li>
+                <li><a href="#video">Видео</a></li>
+                <li><a href="#audio">Музыка</a></li>
+                <li><a href="#table">Турне</a></li>
+                <li><a href="#fan-form">Форма</a></li>
+            </ul>
+            <hr class="fluid-hr">
+        </nav>
+
+        <!-- MAIN + SIDEBAR резиновые -->
+        <div class="fluid-content-row">
+            <main class="fluid-main">
+                <section id="bio">
+                    <h2>Кто такая Леди Гага?</h2>
+                    <div class="bio-photo-fluid">
+                        <img src="image/1.png" alt="Леди Гага на сцене" onerror="this.src='https://picsum.photos/id/104/600/400'">
+                    </div>
+                    <p><span class="bold">Стефани Джоанн Анджелина Джерманотта</span> (родилась 28 марта 1986), известная всему миру как <span class="italic">Lady Gaga</span> — американская певица, автор песен, актриса и филантроп.</p>
+                    <p class="special-text">Она стала известна благодаря своим экстравагантным образам и уникальному голосу.</p>
+                    <p><span class="underline">Дебютный альбом The Fame (2008)</span> стал мировым хитом с синглами "Just Dance" и "Poker Face".</p>
+                    <p>Гага начала свою карьеру, выступая в клубах Нью-Йорка. Позже она подписала контракт с лейблом Interscope Records.</p>
+                    <p>Она также известна своей актерской работой: роль в фильме "Звезда родилась", за которую получила "Оскар" за лучшую песню "Shallow".</p>
+                </section>
+
+                <section id="discography">
+                    <h2>Дискография</h2>
+                    <div class="discography-fluid-grid">
+                        <div class="disc-col-fluid">
+                            <h3>Студийные альбомы:</h3>
+                            <ul class="custom-list-fluid">
+                                <li>The Fame (2008)</li>
+                                <li>The Fame Monster (2009)</li>
+                                <li>Born This Way (2011)</li>
+                                <li>ARTPOP (2013)</li>
+                                <li>Cheek to Cheek (2014)</li>
+                                <li>Joanne (2016)</li>
+                                <li>A Star Is Born (2018)</li>
+                                <li>Chromatica (2020)</li>
+                                <li>Love for Sale (2021)</li>
+                            </ul>
+                        </div>
+                        <div class="disc-col-fluid">
+                            <h3>Топ-5 песен:</h3>
+                            <ol class="fluid-ol">
+                                <li>Bad Romance</li>
+                                <li>Shallow</li>
+                                <li>Poker Face</li>
+                                <li>Born This Way</li>
+                                <li>Always Remember Us This Way</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="photo">
+                    <h2>Фотогалерея</h2>
+                    <div class="gallery-fluid-grid">
+                        <figure class="gallery-item-fluid">
+                            <img src="image/2.jpg" alt="Chromatica" class="gallery-img-fluid" onerror="this.src='https://picsum.photos/id/29/300/230'">
+                            <figcaption>Эра Chromatica</figcaption>
+                        </figure>
+                        <figure class="gallery-item-fluid">
+                            <img src="image/3.jpg" alt="Оскар" class="gallery-img-fluid circle-img-fluid" onerror="this.src='https://picsum.photos/id/64/300/230'">
+                            <figcaption>Оскар 2019</figcaption>
+                        </figure>
+                        <figure class="gallery-item-fluid">
+                            <img src="image/4.png" alt="С Тони Беннеттом" class="gallery-img-fluid" onerror="this.src='https://picsum.photos/id/22/300/230'">
+                            <figcaption>Love for Sale</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section id="video">
+                    <h2>Видео</h2>
+                    <div class="video-fluid-grid">
+                        <div class="video-wrapper-fluid">
+                            <h3>Bad Romance</h3>
+                            <video controls poster="image/5.jpg">
+                                <source src="media/lady-gaga-bad-romance_438934.mp4" type="video/mp4">
+                                Ваш браузер не поддерживает видео.
+                            </video>
+                        </div>
+                        <div class="video-wrapper-fluid">
+                            <h3>Judas</h3>
+                            <video controls poster="image/6.jpg">
+                                <source src="media/lady-gaga-judas_652314.mp4" type="video/mp4">
+                                Ваш браузер не поддерживает видео.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="audio">
+                    <h2>Музыка</h2>
+                    <div class="audio-block-fluid">
+                        <p><strong>Shallow</strong> (из фильма "Звезда родилась")</p>
+                        <audio controls>
+                            <source src="audio/Lady_Gaga_Bradley_Cooper_-_Shallow_64798036.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="audio-block-fluid">
+                        <p><strong>Always Remember Us This Way</strong></p>
+                        <audio controls>
+                            <source src="audio/Lady_Gaga_-_Always_Remember_Us_This_Way_79404418.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </section>
+
+                <section id="table">
+                    <h2>Турне и концерты</h2>
+                    <div class="table-fluid-wrapper">
+                        <table class="styled-table-fluid">
+                            <caption>История мировых туров</caption>
+                            <thead>
+                                <tr><th>Год</th><th>Название тура</th><th>Альбом</th><th>Концертов</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td data-label="Год">2009-2010</td><td data-label="Название тура">The Fame Ball Tour</td><td data-label="Альбом">The Fame</td><td data-label="Концертов">83</td></tr>
+                                <tr><td data-label="Год">2010-2011</td><td data-label="Название тура">The Monster Ball Tour</td><td data-label="Альбом">The Fame Monster</td><td data-label="Концертов">200+</td></tr>
+                                <tr><td data-label="Год">2012-2013</td><td data-label="Название тура">Born This Way Ball</td><td data-label="Альбом">Born This Way</td><td data-label="Концертов">98</td></tr>
+                                <tr><td data-label="Год">2022</td><td data-label="Название тура">The Chromatica Ball</td><td data-label="Альбом">Chromatica</td><td data-label="Концертов">20</td></tr>
+                                <tr><td data-label="Год">2025</td><td data-label="Название тура">The Mayhem Ball</td><td data-label="Альбом">Mayhem</td><td data-label="Концертов">60</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="fan-form">
+                    <h2>Форма для фанатов</h2>
+                    <form action="#" method="post" class="fan-form-fluid">
+                        <fieldset class="fieldset-fluid">
+                            <legend>Ваши данные</legend>
+                            <label>Имя (ник):</label>
+                            <input type="text" name="fan-name" placeholder="Little Monster">
+                            <label>Email:</label>
+                            <input type="email" name="fan-email" placeholder="monster@ladygaga.com">
+                            <label>Возраст:</label>
+                            <input type="number" name="fan-age" placeholder="18">
+                        </fieldset>
+                        
+                        <fieldset class="fieldset-fluid">
+                            <legend>Любимый альбом</legend>
+                            <select name="favorite-album">
+                                <option>The Fame</option>
+                                <option>The Fame Monster</option>
+                                <option>Born This Way</option>
+                                <option>ARTPOP</option>
+                                <option>Joanne</option>
+                                <option>Chromatica</option>
+                            </select>
+                            
+                            <p>Вы уже были на концерте?</p>
+                            <div class="radio-group-fluid">
+                                <label><input type="radio" name="concert" value="yes"> Да</label>
+                                <label><input type="radio" name="concert" value="no"> Нет, но хочу</label>
+                            </div>
+                            
+                            <p>Любимые эпохи:</p>
+                            <div class="checkbox-group-fluid">
+                                <label><input type="checkbox" name="era" value="fame"> The Fame</label>
+                                <label><input type="checkbox" name="era" value="born"> Born This Way</label>
+                                <label><input type="checkbox" name="era" value="chromatica"> Chromatica</label>
+                            </div>
+                            
+                            <p>Почему вы любите Леди Гагу?</p>
+                            <textarea rows="3" cols="50" placeholder="Напишите пару слов..."></textarea>
+                        </fieldset>
+                        
+                        <div class="form-buttons-fluid">
+                            <button type="submit">Отправить</button>
+                            <button type="reset">Очистить</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <aside class="fluid-sidebar">
+                <div class="sidebar-card-fluid">
+                    <h3>Интересные факты</h3>
+                    <ul class="custom-list-fluid">
+                        <li>Настоящее имя — Стефани Джерманотта</li>
+                        <li>Первое выступление в 14 лет</li>
+                        <li>Основала фонд Born This Way</li>
+                        <li>Имеет премию Оскар</li>
+                        <li>Обладательница 13 Грэмми</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card-fluid">
+                    <h3>Награды (кратко)</h3>
+                    <ul class="custom-list-fluid">
+                        <li>13 премий Грэмми</li>
+                        <li>Оскар за песню Shallow</li>
+                        <li>Золотой глобус</li>
+                        <li>BAFTA</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card-fluid">
+                    <h3>Chromatica 2020</h3>
+                    <p>Альбом, который вернул танцевальную поп-музыку. Синглы: Rain On Me (с Арианой Гранде), Stupid Love.</p>
+                </div>
+
+                <div class="sidebar-card-fluid">
+                    <h3>Недавние проекты</h3>
+                    <p>Дом Gucci (2021), Joker: Folie à Deux (2024). Новый сингл Disease (2025).</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="fluid-footer">
+            <p>© 2026 Фан-сайт Lady Gaga | Резиновая (адаптивная) вёрстка</p>
+            <p>Неофициальный сайт для поклонников творчества</p>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

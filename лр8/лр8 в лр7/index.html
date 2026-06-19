@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Lady Gaga — Фан-сайт, регистрация и карточка товара</title>
+    
+    <!-- Подключение внешнего CSS файла -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-container">
+    <!-- HEADER -->
+    <header class="grid-header">
+        <h1 class="header-title">LADY GAGA</h1>
+        <p class="italic">Неофициальный фан-сайт</p>
+        <p>Официальный фан-сайт 2026</p>
+    </header>
+
+    <!-- NAVIGATION с бургер-меню -->
+    <nav class="grid-nav">
+        <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+        <label for="burger-toggle" class="burger-icon">☰</label>
+        <ul class="nav-links">
+            <li><a href="#bio">Биография</a></li>
+            <li><a href="#discography">Дискография</a></li>
+            <li><a href="#photo">Фото</a></li>
+            <li><a href="#video">Видео</a></li>
+            <li><a href="#audio">Музыка</a></li>
+            <li><a href="#table">Турне</a></li>
+            <li><a href="#fan-form">Форма</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="grid-main">
+        <section id="bio">
+            <h2>Кто такая Леди Гага?</h2>
+            <div class="bio-photo">
+                <img src="image/1.png" alt="Леди Гага на сцене" onerror="this.src='https://picsum.photos/id/104/400/300'">
+            </div>
+            <p><span class="bold">Стефани Джоанн Анджелина Джерманотта</span> (родилась 28 марта 1986), известная всему миру как <span class="italic">Lady Gaga</span> — американская певица, автор песен, актриса и филантроп.</p>
+            <p class="special-text">Она стала известна благодаря своим экстравагантным образам и уникальному голосу.</p>
+            <p><span class="underline">Дебютный альбом The Fame (2008)</span> стал мировым хитом с синглами "Just Dance" и "Poker Face".</p>
+            <p>Гага начала свою карьеру, выступая в клубах Нью-Йорка. Позже она подписала контракт с лейблом Interscope Records.</p>
+            <p>Она также известна своей актерской работой: роль в фильме "Звезда родилась", за которую получила "Оскар" за лучшую песню "Shallow".</p>
+        </section>
+
+        <section id="discography">
+            <h2>Дискография</h2>
+            <div class="discography-grid">
+                <div>
+                    <h3>Студийные альбомы:</h3>
+                    <ul class="custom-list">
+                        <li>The Fame (2008)</li>
+                        <li>The Fame Monster (2009)</li>
+                        <li>Born This Way (2011)</li>
+                        <li>ARTPOP (2013)</li>
+                        <li>Cheek to Cheek (2014)</li>
+                        <li>Joanne (2016)</li>
+                        <li>A Star Is Born (2018)</li>
+                        <li>Chromatica (2020)</li>
+                        <li>Love for Sale (2021)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Топ-5 песен:</h3>
+                    <ol>
+                        <li>Bad Romance</li>
+                        <li>Shallow</li>
+                        <li>Poker Face</li>
+                        <li>Born This Way</li>
+                        <li>Always Remember Us This Way</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="photo">
+            <h2>Фотогалерея</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="image/2.jpg" alt="Chromatica" class="gallery-img" onerror="this.src='https://picsum.photos/id/29/280/220'">
+                    <figcaption>Эра Chromatica</figcaption>
+                </figure>
+                <figure>
+                    <img src="image/3.jpg" alt="Оскар" class="gallery-img circle-img" onerror="this.src='https://picsum.photos/id/64/280/220'">
+                    <figcaption>Оскар 2019</figcaption>
+                </figure>
+                <figure>
+                    <img src="image/4.png" alt="С Тони Беннеттом" class="gallery-img" onerror="this.src='https://picsum.photos/id/22/280/220'">
+                    <figcaption>Love for Sale</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Видео</h2>
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <h3>Bad Romance</h3>
+                    <video controls poster="image/5.jpg">
+                        <source src="media/lady-gaga-bad-romance_438934.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                    <h3>Judas</h3>
+                    <video controls poster="image/6.jpg">
+                        <source src="media/lady-gaga-judas_652314.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="audio">
+            <h2>Музыка</h2>
+            <div class="audio-center">
+                <p><strong>Shallow</strong> (из фильма "Звезда родилась")</p>
+                <audio controls>
+                    <source src="audio/Lady_Gaga_Bradley_Cooper_-_Shallow_64798036.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="audio-center">
+                <p><strong>Always Remember Us This Way</strong></p>
+                <audio controls>
+                    <source src="audio/Lady_Gaga_-_Always_Remember_Us_This_Way_79404418.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </section>
+
+        <section id="table">
+            <h2>Турне и концерты</h2>
+            <table class="styled-table">
+                <caption>История мировых туров</caption>
+                <thead>
+                    <tr><th>Год</th><th>Название тура</th><th>Альбом</th><th>Концертов</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Год">2009-2010</td><td data-label="Название тура">The Fame Ball Tour</td><td data-label="Альбом">The Fame</td><td data-label="Концертов">83</td></tr>
+                    <tr><td data-label="Год">2010-2011</td><td data-label="Название тура">The Monster Ball Tour</td><td data-label="Альбом">The Fame Monster</td><td data-label="Концертов">200+</td></tr>
+                    <tr><td data-label="Год">2012-2013</td><td data-label="Название тура">Born This Way Ball</td><td data-label="Альбом">Born This Way</td><td data-label="Концертов">98</td></tr>
+                    <tr><td data-label="Год">2022</td><td data-label="Название тура">The Chromatica Ball</td><td data-label="Альбом">Chromatica</td><td data-label="Концертов">20</td></tr>
+                    <tr><td data-label="Год">2025</td><td data-label="Название тура">The Mayhem Ball</td><td data-label="Альбом">Mayhem</td><td data-label="Концертов">60</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="fan-form">
+            <h2>Форма для фанатов</h2>
+            <form action="#" method="post" class="fan-form-container">
+                <fieldset>
+                    <legend>Ваши данные</legend>
+                    <label>Имя (ник):</label>
+                    <input type="text" name="fan-name" placeholder="Little Monster">
+                    
+                    <label>Email:</label>
+                    <input type="email" name="fan-email" placeholder="monster@ladygaga.com">
+                    
+                    <label>Возраст:</label>
+                    <input type="number" name="fan-age" placeholder="18">
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Любимый альбом</legend>
+                    <select name="favorite-album">
+                        <option>The Fame</option>
+                        <option>The Fame Monster</option>
+                        <option>Born This Way</option>
+                        <option>ARTPOP</option>
+                        <option>Joanne</option>
+                        <option>Chromatica</option>
+                    </select>
+                    
+                    <p>Вы уже были на концерте?</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="concert" value="yes"> Да</label>
+                        <label><input type="radio" name="concert" value="no"> Нет, но хочу</label>
+                    </div>
+                    
+                    <p>Любимые эпохи:</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="era" value="fame"> The Fame</label>
+                        <label><input type="checkbox" name="era" value="born"> Born This Way</label>
+                        <label><input type="checkbox" name="era" value="chromatica"> Chromatica</label>
+                    </div>
+                    
+                    <p>Почему вы любите Леди Гагу?</p>
+                    <textarea rows="3" cols="50" placeholder="Напишите пару слов..."></textarea>
+                </fieldset>
+                
+                <div class="form-buttons">
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Очистить</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ===== ВСТАВЛЯЕМ КАРТОЧКИ (РЕГИСТРАЦИЯ + ТОВАР) ===== -->
+        <section style="margin-top: 50px; border-top: 2px solid #e91e63; padding-top: 30px;">
+            <h2>Дополнительные сервисы</h2>
+            <div class="cards-wrapper">
+                <!-- Блок регистрации -->
+                <div class="registration-card">
+                    <div class="form-header">
+                        <h1 class="form-title">Регистрация</h1>
+                        <p class="form-subtitle">Заполните анкету и получите дисконтную карту!</p>
+                    </div>
+                    <form id="discountForm" action="#" method="post" novalidate>
+                        <div class="form-fields">
+                            <div class="field-group">
+                                <label>Ваше имя <span class="required-star">*</span></label>
+                                <input type="text" name="firstName" autocomplete="given-name" placeholder="Александр">
+                            </div>
+                            <div class="field-group">
+                                <label>Ваша фамилия <span class="required-star">*</span></label>
+                                <input type="text" name="lastName" autocomplete="family-name" placeholder="Иванов">
+                            </div>
+                            <div class="field-group">
+                                <label>Ваша дата рождения <span class="required-star">*</span></label>
+                                <input type="text" name="birthDate" autocomplete="bday" placeholder="01.01.1990">
+                            </div>
+                            <div class="field-group">
+                                <label>Ваш e-mail <span class="required-star">*</span></label>
+                                <input type="email" name="email" autocomplete="email" placeholder="example@mail.ru">
+                            </div>
+                            <div class="field-group">
+                                <label>Ваш номер телефона <span class="required-star">*</span></label>
+                                <input type="tel" name="phone" autocomplete="tel" placeholder="+7 900 123-45-67">
+                            </div>
+                            <div class="field-group">
+                                <label>Город <span class="required-star">*</span></label>
+                                <input type="text" name="city" autocomplete="address-level2" placeholder="Москва">
+                            </div>
+                            <button type="submit" class="register-btn">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Карточка товара -->
+                <div class="product-card">
+                    <img src="image/1.jpg" alt="Товар" class="product-photo" onerror="this.src='https://picsum.photos/seed/tovar/300/400'">
+                    <div class="product-details">
+                        <div class="price-block">
+                            <div class="current-price">3 150 руб./шт.</div>
+                            <div class="old-price">3 500 руб.</div>
+                            <div class="savings">
+                                Экономия: <span class="savings-amount">350 руб.</span>
+                            </div>
+                        </div>
+
+                        <div class="timer-stock-row">
+                            <div class="sq-block"><div class="sq-num">119</div><div class="sq-label">дней</div></div>
+                            <div class="sq-sep" aria-hidden="true">:</div>
+                            <div class="sq-block"><div class="sq-num">19</div><div class="sq-label">час</div></div>
+                            <div class="sq-sep" aria-hidden="true">:</div>
+                            <div class="sq-block"><div class="sq-num">13</div><div class="sq-label">мин</div></div>
+                            <div class="sq-block stock-sq"><div class="sq-num">200</div><div class="sq-label">шт.</div></div>
+                        </div>
+
+                        <div class="meta-row">
+                            <div class="many-block">
+                                <span class="green-check">✔</span>
+                                <span class="many-text">Много</span>
+                            </div>
+                            <span class="cheaper-link">Нашли дешевле?</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="size-grid">
+                            <span class="size-label">Размер</span>
+                            <div class="size-options">
+                                <button class="size-btn">XS</button>
+                                <button class="size-btn">S</button>
+                                <button class="size-btn active">M</button>
+                                <button class="size-btn">L</button>
+                            </div>
+                            <span class="size-chart-link">Таблица размеров</span>
+                        </div>
+
+                        <div class="action-grid">
+                            <div class="cart-row">
+                                <div class="quantity-box">
+                                    <button class="qty-btn">−</button>
+                                    <span class="qty-value">1</span>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="btn-cart">В корзину</button>
+                            </div>
+                            <button class="btn-one-click">Купить в 1 клик</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="grid-sidebar">
+        <div class="sidebar-card">
+            <h3>Интересные факты</h3>
+            <ul class="quick-facts custom-list">
+                <li>Настоящее имя — Стефани Джерманотта</li>
+                <li>Первое выступление в 14 лет</li>
+                <li>Основала фонд Born This Way</li>
+                <li>Имеет премию Оскар</li>
+                <li>Обладательница 13 Грэмми</li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-card">
+            <h3>Награды (кратко)</h3>
+            <ul class="custom-list">
+                <li>13 премий Грэмми</li>
+                <li>Оскар за песню Shallow</li>
+                <li>Золотой глобус</li>
+                <li>BAFTA</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-card">
+            <h3>Chromatica 2020</h3>
+            <p>Альбом, который вернул танцевальную поп-музыку. Синглы: Rain On Me (с Арианой Гранде), Stupid Love.</p>
+        </div>
+
+        <div class="sidebar-card">
+            <h3>Недавние проекты</h3>
+            <p>Дом Gucci (2021), Joker: Folie à Deux (2024). Новый сингл Disease (2025).</p>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="grid-footer">
+        <p>2026 Фан-сайт Lady Gaga | Сделано с использованием CSS Grid</p>
+        <p>Неофициальный сайт для поклонников творчества</p>
+    </footer>
+</div>
+
+<!-- Скрипт для очистки формы регистрации -->
+<script>
+    (function() {
+        const formElement = document.getElementById('discountForm');
+        if (formElement) {
+            formElement.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const allInputs = formElement.querySelectorAll('input');
+                allInputs.forEach(input => {
+                    input.value = '';
+                    input.style.borderColor = '';
+                    input.style.backgroundColor = '';
+                });
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

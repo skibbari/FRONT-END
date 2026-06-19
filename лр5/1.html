@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        h2 {
+            margin: 30px 0 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .box {
+            background: #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .flex {
+            display: flex;
+            background: #bbb;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .item {
+            background: #4a90e2;
+            color: white;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .item:nth-child(2) { background: #e2844a; }
+        .item:nth-child(3) { background: #4ae27a; }
+        .item:nth-child(4) { background: #e24a9a; }
+        .note {
+            margin-top: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<!-- display: flex -->
+<h2>1. display: flex</h2>
+<div class="box">
+    <div class="flex">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="note">Элементы стали в ряд</div>
+</div>
+
+<!-- flex-direction -->
+<h2>2. flex-direction</h2>
+<div class="box">
+    <div class="flex" style="flex-direction: column;">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+    <div class="note">column — в столбик</div>
+</div>
+
+<!-- flex-wrap -->
+<h2>3. flex-wrap</h2>
+<div class="box">
+    <div class="flex" style="flex-wrap: wrap; width: 250px;">
+        <div class="item" style="width: 80px;">1</div>
+        <div class="item" style="width: 80px;">2</div>
+        <div class="item" style="width: 80px;">3</div>
+        <div class="item" style="width: 80px;">4</div>
+    </div>
+    <div class="note">wrap — перенос на новую строку</div>
+</div>
+
+<!-- flex-flow -->
+<h2>4. flex-flow</h2>
+<div class="box">
+    <div class="flex" style="flex-flow: row wrap; width: 250px;">
+        <div class="item" style="width: 80px;">1</div>
+        <div class="item" style="width: 80px;">2</div>
+        <div class="item" style="width: 80px;">3</div>
+        <div class="item" style="width: 80px;">4</div>
+    </div>
+    <div class="note">flex-flow: row wrap (direction + wrap)</div>
+</div>
+
+<!-- justify-content -->
+<h2>5. justify-content</h2>
+<div class="box">
+    <div class="flex" style="justify-content: space-between;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="note">space-between — прижаты к краям</div>
+</div>
+
+<!-- align-items -->
+<h2>6. align-items</h2>
+<div class="box">
+    <div class="flex" style="align-items: center; height: 100px;">
+        <div class="item">A</div>
+        <div class="item" style="padding: 30px 15px;">B</div>
+        <div class="item">C</div>
+    </div>
+    <div class="note">center — по центру по вертикали</div>
+</div>
+
+<!-- align-content -->
+<h2>7. align-content</h2>
+<div class="box">
+    <div class="flex" style="flex-wrap: wrap; align-content: space-between; height: 140px; width: 200px;">
+        <div class="item" style="width: 60px;">1</div>
+        <div class="item" style="width: 60px;">2</div>
+        <div class="item" style="width: 60px;">3</div>
+        <div class="item" style="width: 60px;">4</div>
+    </div>
+    <div class="note">space-between — строки разнесены</div>
+</div>
+
+<!-- gap и column-gap -->
+<h2>8-9. gap / column-gap</h2>
+<div class="box">
+    <div class="flex" style="gap: 20px;">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+    <div class="note">gap: 20px — отступы между элементами</div>
+</div>
+
+<!-- grow, shrink, basis, flex -->
+<h2>10-13. grow / shrink / basis / flex</h2>
+<div class="box">
+    <div class="flex">
+        <div class="item" style="flex-grow: 1;">grow:1</div>
+        <div class="item" style="flex-grow: 2;">grow:2</div>
+        <div class="item" style="flex-basis: 150px;">basis:150px</div>
+    </div>
+    <div class="note">flex: 1 1 200px — короткая запись</div>
+</div>
+
+<!-- align-self -->
+<h2>14. align-self</h2>
+<div class="box">
+    <div class="flex" style="align-items: center; height: 100px;">
+        <div class="item">A</div>
+        <div class="item" style="align-self: flex-start;">start</div>
+        <div class="item" style="align-self: flex-end;">end</div>
+    </div>
+    <div class="note">align-self — переопределяет выравнивание</div>
+</div>
+
+<!-- order -->
+<h2>15. order</h2>
+<div class="box">
+    <div class="flex">
+        <div class="item">1 (0)</div>
+        <div class="item" style="order: -1;">2 (-1) первый</div>
+        <div class="item" style="order: 1;">3 (1) последний</div>
+    </div>
+    <div class="note">order меняет порядок отображения</div>
+</div>
+</body>
+</html>

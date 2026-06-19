@@ -1,0 +1,356 @@
+/* ---------- ГЛОБАЛЬНЫЕ СТИЛИ ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:wght@400;700&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --main-color: #e91e63;
+    --dark-bg: #1a1a2e;
+    --light-text: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--light-text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+}
+
+/* ========== ШАПКА (flex-контейнер) ========== */
+.header {
+    background: rgba(0,0,0,0.8);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--main-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.nav a:hover {
+    background: var(--main-color);
+    transform: translateY(-2px);
+}
+
+.burger-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#burger-toggle {
+    display: none;
+}
+
+/* ========== ОСНОВНАЯ СЕТКА ========== */
+.grid-main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.block {
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    padding: 20px;
+    transition: all 0.3s;
+    border: 1px solid rgba(233,30,99,0.3);
+}
+.block:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    border-left: 5px solid var(--main-color);
+    padding-left: 15px;
+    margin: 0 0 20px 0;
+}
+
+/* Размеры блоков по заданию */
+.block1 { flex: 2 1 300px; }
+.block4 { flex: 1 1 250px; }
+.block5 { flex: 1 1 250px; }
+.block2 { width: 100%; }
+
+/* Музыка и Турне/Анкета — отдельные горизонтальные блоки (на всю ширину) */
+.block3, .block6 {
+    width: 100%;
+    flex: auto;
+}
+
+/* ========== КОНТЕНТ ========== */
+.bio-photo { text-align: center; margin-bottom: 20px; }
+.bio-photo img { width: 350px; max-width: 90%; border-radius: 25px; border: 3px solid var(--main-color); }
+
+/* ДИСКОГРАФИЯ: списки по центру блока */
+.discography-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.discography-container > div {
+    width: 100%;
+}
+.custom-list {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+.custom-list li::before {
+    content: "★";
+    color: var(--main-color);
+    margin-right: 8px;
+}
+.discography-container ol {
+    display: inline-block;
+    text-align: left;
+}
+
+/* ФОТОГАЛЕРЕЯ: горизонтальный ряд (без переноса), центрирование фото */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.gallery figure {
+    text-align: center;
+    flex: 0 0 auto;
+    width: 250px;
+}
+.gallery-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s;
+}
+.gallery-img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+.circle-img {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.video-flex { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
+.video-wrapper { text-align: center; flex: 1 1 300px; }
+.video-wrapper video { max-width: 100%; border-radius: 15px; }
+
+/* МУЗЫКА с фото */
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.music-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.music-info {
+    flex: 1;
+    text-align: left;
+}
+.music-info audio {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 8px;
+}
+@media (max-width: 550px) {
+    .music-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .music-info {
+        text-align: center;
+    }
+}
+
+/* Таблица (полная) */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.styled-table th, .styled-table td {
+    border: 1px solid var(--main-color);
+    padding: 10px;
+    text-align: center;
+}
+.styled-table th {
+    background: var(--main-color);
+    color: white;
+}
+.styled-table tr:nth-child(even) {
+    background: rgba(233,30,99,0.2);
+}
+
+/* Полная форма фаната – отдельный flex-блок */
+.fan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.fan-form fieldset {
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+    padding: 15px;
+}
+.fan-form legend {
+    color: var(--main-color);
+    font-weight: bold;
+    padding: 0 10px;
+}
+.fan-form input[type="text"],
+.fan-form input[type="email"],
+.fan-form input[type="number"],
+.fan-form select,
+.fan-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.fan-form button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    margin: 5px;
+}
+.fan-form button:hover {
+    background: #ff4081;
+    transform: scale(1.02);
+}
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ПОДВАЛ: год и email */
+.footer {
+    background: #1a1a2e;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid var(--main-color);
+    font-size: 0.95rem;
+}
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 1023px) {
+    .row { flex-direction: column; }
+    .block1, .block4, .block5, .block3, .block6 { width: 100%; flex: auto; }
+}
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 200px;
+        border-radius: 20px;
+        padding: 15px;
+        z-index: 100;
+    }
+    .burger-icon { display: block; }
+    #burger-toggle:checked ~ .nav { display: flex; }
+    .header { position: relative; }
+    .footer { flex-direction: column; text-align: center; }
+    .footer-info { justify-content: center; }
+}
+@media (min-width: 769px) {
+    .burger-icon, #burger-toggle { display: none; }
+    .nav { display: flex !important; }
+}

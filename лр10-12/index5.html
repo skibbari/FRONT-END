@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let s1 = "Я люблю Беларусь";
+let s2 = "Я учусь в Политехническом колледже";
+
+document.write("S1 = " + s1 + "<br>");
+document.write("S2 = " + s2 + "<br><br>");
+
+// длина строки S1
+document.write("Длина S1 = " + s1.length + "<br><br>");
+
+// удалить слово "учусь"
+let newS2 = s2.replace("учусь", "");
+
+document.write("После удаления: " + newS2 + "<br><br>");
+
+// заменить все буквы ю
+let newS1 = s1.replaceAll("ю", "*");
+
+document.write("После замены: " + newS1);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Фиксированный макет Lady Gaga – полная форма и таблица, flexbox-сетка">
+    <meta name="keywords" content="Lady Gaga, flexbox, фиксированная верстка, форма, таблица туров">
+    <title>Lady Gaga | Официальный фан-сайт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-container">
+    <header class="header">
+        <div class="logo">LADY GAGA</div>
+        <nav class="nav">
+            <a href="#bio">Биография</a>
+            <a href="#disc">Дискография</a>
+            <a href="#photo">Фото</a>
+            <a href="#video">Видео</a>
+            <a href="#audio">Музыка</a>
+            <a href="#fanform">Анкета</a>
+        </nav>
+    </header>
+
+    <div class="grid-main">
+        <!-- Строка 1: блок 1 (био), блок 4 (дискография), блок 5 (галерея) -->
+        <div class="row">
+            <div class="block block1" id="bio">
+                <h2>Кто такая Леди Гага?</h2>
+                <div class="bio-photo">
+                    <img src="image/1.png" alt="Леди Гага на сцене">
+                </div>
+                <p><strong>Стефани Джоанн Анджелина Джерманотта</strong> (родилась 28 марта 1986), известная всему миру как <em>Lady Gaga</em> — американская певица, автор песен, актриса и филантроп.</p>
+                <p>Дебютный альбом The Fame (2008) стал мировым хитом с синглами "Just Dance" и "Poker Face".</p>
+                <p>Обладательница «Оскара», «Грэмми» и «Золотого глобуса».</p>
+            </div>
+
+            <div class="block block4" id="disc">
+                <h2>Дискография</h2>
+                <div class="discography-container">
+                    <div>
+                        <h3>Студийные альбомы:</h3>
+                        <ul class="custom-list">
+                            <li>The Fame (2008)</li>
+                            <li>The Fame Monster (2009)</li>
+                            <li>Born This Way (2011)</li>
+                            <li>ARTPOP (2013)</li>
+                            <li>Joanne (2016)</li>
+                            <li>Chromatica (2020)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Топ-5 песен:</h3>
+                        <ol>
+                            <li>Bad Romance</li>
+                            <li>Shallow</li>
+                            <li>Poker Face</li>
+                            <li>Born This Way</li>
+                            <li>Always Remember Us This Way</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block5" id="photo">
+                <h2>Фотогалерея</h2>
+                <div class="gallery">
+                    <figure>
+                        <img src="image/2.jpg" alt="Chromatica" class="gallery-img">
+                        <figcaption>Chromatica</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="image/3.jpg" alt="Оскар" class="gallery-img circle-img">
+                        <figcaption>Оскар 2019</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="image/4.png" alt="Love for Sale" class="gallery-img">
+                        <figcaption>Love for Sale</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!-- Строка 2: блок 2 (видео) – на всю ширину -->
+        <div class="block block2" id="video">
+            <h2>Видео</h2>
+            <div class="video-flex">
+                <div class="video-wrapper">
+                    <h3>Bad Romance</h3>
+                    <video controls width="450" height="253" poster="image/5.jpg">
+                        <source src="media/lady-gaga-bad-romance_438934.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="video-wrapper">
+                    <h3>Judas</h3>
+                    <video controls width="450" height="253" poster="image/6.jpg">
+                        <source src="media/lady-gaga-judas_652314.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 3: МУЗЫКА – отдельный горизонтальный блок (на всю ширину) -->
+        <div class="block block3" id="audio">
+            <h2>Музыка</h2>
+            <div class="music-item">
+                <img src="image/7.jpg" alt="Shallow" class="music-img">
+                <div class="music-info">
+                    <strong>Shallow</strong> (из фильма "Звезда родилась")<br>
+                    <audio controls>
+                        <source src="audio/Lady_Gaga_Bradley_Cooper_-_Shallow_64798036.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="music-item">
+                <img src="image/8.jpg" alt="Always Remember Us This Way" class="music-img">
+                <div class="music-info">
+                    <strong>Always Remember Us This Way</strong><br>
+                    <audio controls>
+                        <source src="audio/Lady_Gaga_-_Always_Remember_Us_This_Way_79404418.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 6: ТУРНЕ И АНКЕТА – отдельный горизонтальный блок (на всю ширину) -->
+        <div class="block block6" id="fanform">
+            <h2>Турне и анкета фаната</h2>
+            <table class="styled-table">
+                <caption>История мировых туров</caption>
+                <thead>
+                    <tr><th width="100">Год</th><th width="200">Название тура</th><th width="150">Альбом</th><th width="100">Концертов</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2009-2010</td><td>The Fame Ball Tour</td><td>The Fame</td><td>83</td></tr>
+                    <tr><td>2010-2011</td><td>The Monster Ball Tour</td><td>The Fame Monster</td><td>200+</td></tr>
+                    <tr><td>2012-2013</td><td>Born This Way Ball</td><td>Born This Way</td><td>98</td></tr>
+                    <tr><td>2022</td><td>The Chromatica Ball</td><td>Chromatica</td><td>20</td></tr>
+                    <tr><td>2025</td><td>The Mayhem Ball</td><td>Mayhem</td><td>60</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Форма для фанатов</h3>
+            <form class="fan-form" action="#" method="post">
+                <fieldset>
+                    <legend>Ваши данные</legend>
+                    <label>Имя (ник):</label>
+                    <input type="text" name="fan-name" placeholder="Little Monster" required>
+                    <label>Email:</label>
+                    <input type="email" name="fan-email" placeholder="monster@ladygaga.com" required>
+                    <label>Возраст:</label>
+                    <input type="number" name="fan-age" placeholder="18" min="1" max="120">
+                </fieldset>
+                <fieldset>
+                    <legend>Любимый альбом</legend>
+                    <select name="favorite-album">
+                        <option>The Fame</option>
+                        <option>The Fame Monster</option>
+                        <option>Born This Way</option>
+                        <option>ARTPOP</option>
+                        <option>Joanne</option>
+                        <option>Chromatica</option>
+                    </select>
+                    <p>Вы уже были на концерте?</p>
+                    <div class="radio-group">
+                        <label><input type="radio" name="concert" value="yes"> Да</label>
+                        <label><input type="radio" name="concert" value="no"> Нет, но хочу</label>
+                    </div>
+                    <p>Любимые эпохи:</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="era" value="fame"> The Fame</label>
+                        <label><input type="checkbox" name="era" value="born"> Born This Way</label>
+                        <label><input type="checkbox" name="era" value="chromatica"> Chromatica</label>
+                    </div>
+                    <p>Почему вы любите Леди Гагу?</p>
+                    <textarea rows="3" cols="50" placeholder="Напишите пару слов..."></textarea>
+                </fieldset>
+                <div class="form-buttons">
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Очистить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ: год и email -->
+    <footer class="footer">
+        <div>© 2026 Фан-сайт Lady Gaga</div>
+        <div class="footer-info">
+            <span>fanladygaga@gmail.com</span>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

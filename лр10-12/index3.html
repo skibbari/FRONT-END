@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let arr = [12, 5, 18, 7, 9, 2];
+
+document.write("Исходный массив: " + arr + "<br><br>");
+
+// сумма четных элементов
+let sum = 0;
+
+for(let i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 == 0) {
+        sum += arr[i];
+    }
+}
+
+document.write("Сумма четных элементов = " + sum + "<br><br>");
+
+// поиск максимального элемента
+let max = Math.max(...arr);
+let maxIndex = arr.indexOf(max);
+
+// меняем местами последний и максимальный
+let temp = arr[maxIndex];
+arr[maxIndex] = arr[arr.length - 1];
+arr[arr.length - 1] = temp;
+
+document.write("Измененный массив: " + arr);
+
+</script>
+
+</body>
+</html>
